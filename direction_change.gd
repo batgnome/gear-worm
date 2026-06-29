@@ -1,11 +1,18 @@
 extends Node2D
 
+var pos_cell =[]
 
-# Called when the node enters the scene tree for the first time.
+var Dir = Vector2.UP
 func _ready():
-	pass # Replace with function body.
+	pos_cell[0] = position.x/32
+	pos_cell[1] = position.y/32
+	print(pos_cell)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func get_direction():
+	return Dir

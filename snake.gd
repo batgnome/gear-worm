@@ -46,7 +46,16 @@ func _process(delta):
 	if Input.is_action_just_pressed("RIGHT"):
 		direction = Vector2.RIGHT
 		$ahead.rotation = PI/2
-
+	match direction:
+		Vector2.RIGHT:
+			$ahead.rotation = PI/2
+		Vector2.LEFT:
+			$ahead.rotation = -PI/2
+		Vector2.UP:
+			$ahead.rotation = 0
+		Vector2.DOWN:
+			$ahead.rotation = PI
+				
 	if forward:
 		step_accum += delta
 		if step_accum >= step_time:
@@ -57,7 +66,7 @@ func _process(delta):
 		
 func step():
 	history.push_front(global_position)
-	position += direction * 12
+	position += direction * GRID
 	if current_tails < max_tails:
 		add_tails(history[0])
 	for index in tails.size():
@@ -83,10 +92,16 @@ func remove_object(i):
 	object_storage[i] =null
 	tails[i].remove_object();
 	
-func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_ahead_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("wall"):
 		forward = false
 
 
 func _on_ahead_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	forward = true
+
+
+func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	var parent = area.get_parent()
+	if parent.name == "direction_change":
+		direction = parent.get_direction();

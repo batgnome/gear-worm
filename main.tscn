@@ -1,18 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7jxoje1fy7ub"]
+[gd_scene load_steps=7 format=3 uid="uid://c7jxoje1fy7ub"]
 
 [ext_resource type="PackedScene" uid="uid://umu71d3plxel" path="res://snake.tscn" id="1_v5jh3"]
 [ext_resource type="PackedScene" uid="uid://c6srav1oxggy2" path="res://object.tscn" id="2_812kd"]
 [ext_resource type="PackedScene" uid="uid://cfbuxldwha6y7" path="res://factory.tscn" id="3_i3g8k"]
 [ext_resource type="Resource" uid="uid://btefm2dibwic2" path="res://Wheel.tres" id="4_gr86d"]
 [ext_resource type="Resource" uid="uid://cu30lg7h8o1ku" path="res://Gear.tres" id="5_oap3e"]
+[ext_resource type="PackedScene" uid="uid://dep16lhaao1us" path="res://direction_change.tscn" id="6_u6b3p"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Snake" parent="." instance=ExtResource("1_v5jh3")]
-position = Vector2(436, 313)
+position = Vector2(448, 320)
 
 [node name="object" parent="." instance=ExtResource("2_812kd")]
-position = Vector2(584, 310)
+position = Vector2(576, 320)
 
 [node name="object2" parent="." instance=ExtResource("2_812kd")]
 position = Vector2(629, 424)
@@ -24,7 +25,7 @@ position = Vector2(707, 345)
 position = Vector2(477, 435)
 
 [node name="object5" parent="." instance=ExtResource("2_812kd")]
-position = Vector2(504, 364)
+position = Vector2(512, 320)
 
 [node name="object6" parent="." instance=ExtResource("2_812kd")]
 position = Vector2(738, 547)
@@ -39,9 +40,12 @@ position = Vector2(145, 506)
 position = Vector2(179, 213)
 
 [node name="Factory" parent="." instance=ExtResource("3_i3g8k")]
-position = Vector2(322, 260)
+position = Vector2(256, 256)
 
 [node name="Factory2" parent="." instance=ExtResource("3_i3g8k")]
-position = Vector2(291, 364)
+position = Vector2(288, 352)
 input_type = ExtResource("4_gr86d")
 output_type = ExtResource("5_oap3e")
+
+[node name="direction_change" parent="." instance=ExtResource("6_u6b3p")]
+position = Vector2(384, 320)

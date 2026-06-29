@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dep16lhaao1us"]
+
+[ext_resource type="Texture2D" uid="uid://e2i5lbnads81" path="res://assets/direction_change.png" id="1_ukllc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6cly"]
+size = Vector2(32, 32)
+
+[node name="direction_change" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ukllc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_g6cly")

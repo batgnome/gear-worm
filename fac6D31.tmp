@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfbuxldwha6y7"]
+
+[ext_resource type="Script" path="res://factory.gd" id="1_3t5yx"]
+[ext_resource type="Texture2D" uid="uid://b048j8y7xawkh" path="res://assets/factory.png" id="1_bsh1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u0ie"]
+size = Vector2(61, 28)
+
+[node name="Factory" type="Node2D"]
+script = ExtResource("1_3t5yx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bsh1t")
+
+[node name="depot" type="Area2D" parent="." groups=["depot"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="depot"]
+position = Vector2(1, 17)
+shape = SubResource("RectangleShape2D_4u0ie")
+
+[node name="wall" type="Area2D" parent="." groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_4u0ie")
+
+[connection signal="area_shape_entered" from="depot" to="." method="_on_depot_area_shape_entered"]

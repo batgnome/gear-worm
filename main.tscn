@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7jxoje1fy7ub"]
+[gd_scene load_steps=8 format=3 uid="uid://c7jxoje1fy7ub"]
 
+[ext_resource type="Script" uid="uid://bdefv7yidaijo" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://umu71d3plxel" path="res://snake.tscn" id="1_v5jh3"]
 [ext_resource type="PackedScene" uid="uid://c6srav1oxggy2" path="res://object.tscn" id="2_812kd"]
 [ext_resource type="PackedScene" uid="uid://cfbuxldwha6y7" path="res://factory.tscn" id="3_i3g8k"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dep16lhaao1us" path="res://direction_change.tscn" id="6_u6b3p"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_272bh")
 
 [node name="Snake" parent="." instance=ExtResource("1_v5jh3")]
 position = Vector2(448, 320)
@@ -48,4 +50,7 @@ input_type = ExtResource("4_gr86d")
 output_type = ExtResource("5_oap3e")
 
 [node name="direction_change" parent="." instance=ExtResource("6_u6b3p")]
-position = Vector2(384, 320)
+position = Vector2(448, 416)
+
+[node name="Focus" type="Camera2D" parent="."]
+position_smoothing_enabled = true

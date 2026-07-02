@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://du8vchpe2g4se"]
 
-[ext_resource type="Script" path="res://tail.gd" id="1_1iv4p"]
+[ext_resource type="Script" uid="uid://c0obaxrb3quom" path="res://tail.gd" id="1_1iv4p"]
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_k32w0"]
 [ext_resource type="Texture2D" uid="uid://3mf7r3jo6vy5" path="res://assets/locked_unload.png" id="3_ad2uf"]
 

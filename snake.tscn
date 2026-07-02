@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://umu71d3plxel"]
 
-[ext_resource type="Script" path="res://snake.gd" id="1_3xlq4"]
+[ext_resource type="Script" uid="uid://da4a81b51msfa" path="res://snake.gd" id="1_3xlq4"]
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_wrc4s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opfue"]
@@ -19,9 +19,11 @@ script = ExtResource("1_3xlq4")
 shape = SubResource("RectangleShape2D_opfue")
 
 [node name="ahead" type="Area2D" parent="."]
+visible = false
 angular_damp_space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ahead"]
+visible = false
 position = Vector2(0, -34)
 shape = SubResource("RectangleShape2D_opfue")
 
@@ -38,12 +40,9 @@ text = "Head
 "
 label_settings = SubResource("LabelSettings_eplm1")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-zoom = Vector2(2.375, 2.375)
-position_smoothing_enabled = true
-
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="area_shape_entered" from="ahead" to="." method="_on_ahead_area_shape_entered"]
 [connection signal="area_shape_exited" from="ahead" to="." method="_on_ahead_area_shape_exited"]

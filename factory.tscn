@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfbuxldwha6y7"]
 
-[ext_resource type="Script" path="res://factory.gd" id="1_3t5yx"]
+[ext_resource type="Script" uid="uid://yup3no35rrh3" path="res://factory.gd" id="1_3t5yx"]
 [ext_resource type="Texture2D" uid="uid://b048j8y7xawkh" path="res://assets/factory.png" id="1_bsh1t"]
 [ext_resource type="Texture2D" uid="uid://be38ioewl1l4r" path="res://assets/gear_1_stored.png" id="3_8qutp"]
 [ext_resource type="Texture2D" uid="uid://cm3whmpd0yowp" path="res://assets/Wheel_1_stored.png" id="4_e4kba"]

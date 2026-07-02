@@ -1,18 +1,20 @@
 extends Node2D
-
-var pos_cell =[]
-
+var pos_cell
+var active = false
 var Dir = Vector2.UP
 func _ready():
-	pos_cell[0] = position.x/32
-	pos_cell[1] = position.y/32
-	print(pos_cell)
+	pos_cell = global_position/32
+	#print(pos_cell)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	if active and not $Area2D.visible:
+		$Area2D.visible =true
+	#else:
+		#position = get_global_mouse_position()
+	if Input.is_action_just_pressed("MOUSE_LEFT"):
+		active = false
 
 func get_direction():
 	return Dir

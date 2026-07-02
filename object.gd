@@ -18,3 +18,5 @@ func init(new_type):
 	item = new_type
 	$Sprite2D.texture = item.world_texture
 
+func get_grid_pos():
+	return global_position/32

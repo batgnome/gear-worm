@@ -18,3 +18,6 @@ func _process(delta):
 
 func get_direction():
 	return Dir
+
+func get_grid_pos():
+	return pos_cell

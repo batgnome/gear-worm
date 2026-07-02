@@ -11,45 +11,47 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_272bh")
 
-[node name="Snake" parent="." instance=ExtResource("1_v5jh3")]
+[node name="Gameables" type="Node2D" parent="."]
+
+[node name="Snake" parent="Gameables" instance=ExtResource("1_v5jh3")]
 position = Vector2(448, 320)
 
-[node name="object" parent="." instance=ExtResource("2_812kd")]
+[node name="object" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(576, 320)
 
-[node name="object2" parent="." instance=ExtResource("2_812kd")]
+[node name="object2" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(629, 424)
 
-[node name="object3" parent="." instance=ExtResource("2_812kd")]
+[node name="object3" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(707, 345)
 
-[node name="object4" parent="." instance=ExtResource("2_812kd")]
+[node name="object4" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(477, 435)
 
-[node name="object5" parent="." instance=ExtResource("2_812kd")]
+[node name="object5" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(512, 320)
 
-[node name="object6" parent="." instance=ExtResource("2_812kd")]
+[node name="object6" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(738, 547)
 
-[node name="object7" parent="." instance=ExtResource("2_812kd")]
+[node name="object7" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(490, 514)
 
-[node name="object8" parent="." instance=ExtResource("2_812kd")]
+[node name="object8" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(145, 506)
 
-[node name="object9" parent="." instance=ExtResource("2_812kd")]
+[node name="object9" parent="Gameables" instance=ExtResource("2_812kd")]
 position = Vector2(179, 213)
 
-[node name="Factory" parent="." instance=ExtResource("3_i3g8k")]
+[node name="Factory" parent="Gameables" instance=ExtResource("3_i3g8k")]
 position = Vector2(256, 256)
 
-[node name="Factory2" parent="." instance=ExtResource("3_i3g8k")]
+[node name="Factory2" parent="Gameables" instance=ExtResource("3_i3g8k")]
 position = Vector2(288, 352)
 input_type = ExtResource("4_gr86d")
 output_type = ExtResource("5_oap3e")
 
-[node name="direction_change" parent="." instance=ExtResource("6_u6b3p")]
+[node name="direction_change" parent="Gameables" instance=ExtResource("6_u6b3p")]
 position = Vector2(448, 416)
 
 [node name="Focus" type="Camera2D" parent="."]

@@ -16,3 +16,5 @@ func process():
 	get_parent().add_child(product)
 	product.position = position + Vector2(-64+16,-16)
 
+func get_grid_pos():
+	return global_position/32

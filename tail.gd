@@ -53,3 +53,6 @@ func _on_area_2d_2_area_shape_entered(area_rid, area, area_shape_index, local_sh
 		if request_item(factory.get_type()):
 			remove_object();
 			factory.process();
+			
+func get_grid_pos():
+	return global_position/32

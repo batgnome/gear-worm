@@ -13,6 +13,7 @@ var first_move = true
 var current_tails = 0
 var max_tails = 4
 var pos_cell
+@onready var main = get_parent().get_parent()
 func _ready():
 	pass
 	#
@@ -46,7 +47,7 @@ func _process(delta):
 		direction = Vector2.RIGHT
 		$ahead.rotation = PI/2
 	if Input.is_action_just_pressed("MOUSE_LEFT") and inHead:
-		get_parent().focus = self
+		main.focus = self
 	match direction:
 		Vector2.RIGHT:
 			$ahead.rotation = PI/2
@@ -68,7 +69,12 @@ func _process(delta):
 func check_position():
 	if global_position/32:
 		pass
+		
 func step():
+	var tile = main.get_grid_col(global_position/32)
+	if tile and tile.name =="direction change":
+		print("here gott")
+		direction = tile.get_direction();
 	history.push_front(global_position)
 	position += direction * GRID
 	pos_cell = global_position/32
@@ -111,12 +117,13 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 	pass
 
 func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	var parent = area.get_parent()
-	
-	if parent.name == "direction_change" :
-		#print((global_position/32).round(),",",(parent.global_position/32).round())
-		print("my position = ", global_position/32, " thier position = ", parent.global_position/32)
-		#direction = parent.get_direction();
+	#var parent = area.get_parent()
+	#
+	#if parent.name == "direction_change" :
+		##print((global_position/32).round(),",",(parent.global_position/32).round())
+		#print("my position = ", global_position/32, " thier position = ", parent.global_position/32)
+		##direction = parent.get_direction();
+	pass
 
 var inHead = false
 func _on_area_2d_mouse_entered() -> void:
@@ -126,3 +133,6 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	inHead = false
+	
+func get_grid_pos():
+	return global_position/32

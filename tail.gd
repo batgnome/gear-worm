@@ -22,7 +22,8 @@ func set_object(new_item):
 	
 func get_object():
 	return item
-
+func has_object():
+	return item == null
 func remove_object():
 	if item!= null:
 		item=null
@@ -33,7 +34,7 @@ func remove_object():
 func unloadable():
 	return unload
 
-func _on_unload_area_input_event(viewport, event, shape_idx):
+func _on_unload_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		unload = !unload
 		if unload:
@@ -41,13 +42,13 @@ func _on_unload_area_input_event(viewport, event, shape_idx):
 		else:
 			$unload.texture = unload_sprite
 
-func request_item(item):
-	if unload and (item == get_object()):
+func request_item(item_object):
+	if unload and (item_object == get_object()):
 		return true
 	return false
 
 
-func _on_area_2d_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_area_2d_2_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if area.is_in_group("depot") and unload:
 		var factory = area.get_parent()
 		if request_item(factory.get_type()):

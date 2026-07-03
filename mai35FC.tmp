@@ -51,28 +51,8 @@ position = Vector2(288, 352)
 input_type = ExtResource("4_gr86d")
 output_type = ExtResource("5_oap3e")
 
-[node name="direction_change3" parent="Gameables" instance=ExtResource("6_u6b3p")]
-position = Vector2(576, 512)
-
 [node name="direction_change" parent="Gameables" instance=ExtResource("6_u6b3p")]
 position = Vector2(448, 416)
 
-[node name="direction_change4" parent="Gameables" instance=ExtResource("6_u6b3p")]
-position = Vector2(704, 416)
-rotation = -3.14159
-Dir = Vector2(0, 1)
-
-[node name="direction_change5" parent="Gameables" instance=ExtResource("6_u6b3p")]
-position = Vector2(704, 512)
-rotation = -1.5708
-Dir = Vector2(-1, 0)
-
-[node name="direction_change2" parent="Gameables" instance=ExtResource("6_u6b3p")]
-position = Vector2(576, 416)
-rotation = 1.5708
-Dir = Vector2(1, 0)
-
 [node name="Focus" type="Camera2D" parent="."]
-position = Vector2(640, 352)
-zoom = Vector2(2.19, 2.19)
 position_smoothing_enabled = true

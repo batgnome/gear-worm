@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://du8vchpe2g4se"]
 
-[ext_resource type="Script" uid="uid://c0obaxrb3quom" path="res://tail.gd" id="1_1iv4p"]
+[ext_resource type="Script" path="res://tail.gd" id="1_1iv4p"]
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_k32w0"]
 [ext_resource type="Texture2D" uid="uid://3mf7r3jo6vy5" path="res://assets/locked_unload.png" id="3_ad2uf"]
 
@@ -11,7 +11,7 @@ size = Vector2(34, 34)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o7j6k"]
 
-[node name="Tail" type="Node2D"]
+[node name="Tail" type="Node2D" groups=["tail"]]
 script = ExtResource("1_1iv4p")
 
 [node name="Area2D2" type="Area2D" parent="."]
@@ -33,8 +33,14 @@ position = Vector2(13, -14)
 texture = ExtResource("3_ad2uf")
 
 [node name="unload_area" type="Area2D" parent="unload"]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unload/unload_area"]
+light_mask = 0
+visibility_layer = 0
 shape = SubResource("CircleShape2D_o7j6k")
 
 [connection signal="area_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_area_shape_entered"]

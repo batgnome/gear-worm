@@ -1,14 +1,14 @@
 extends Node2D
 var pos_cell
 var active = false
-var Dir = Vector2.UP
+@export var Dir = Vector2.UP
 func _ready():
 	pos_cell = global_position/32
 	#print(pos_cell)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if active and not $Area2D.visible:
 		$Area2D.visible =true
 	#else:

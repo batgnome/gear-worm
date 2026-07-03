@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready():
 	init(item)
-func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	var snake = area.get_parent()
 	if snake.name=="Snake":
 		if !snake.isFull():

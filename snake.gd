@@ -72,7 +72,8 @@ func check_position():
 		
 func step():
 	var tile = main.get_grid_col(global_position/32)
-	if tile and tile.name =="direction change":
+	
+	if tile and is_instance_valid(tile) and  tile.is_in_group("direction"):
 		print("here gott")
 		direction = tile.get_direction();
 	history.push_front(global_position)
@@ -97,40 +98,29 @@ func add_object(object):
 		if object_storage[i] ==null:
 			object_storage[i] = object.get_type()
 			tails[i].set_object(object.get_type())
-			
 			return
+func add_factory_object(object,i):
+	if object_storage[i] ==null:
+		object_storage[i] = object
+		tails[i].set_object(object)		
 
 func remove_object(i):
 	object_storage[i] =null
 	tails[i].remove_object();
 	
-func _on_ahead_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_ahead_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if area.is_in_group("wall"):
 		forward = false
 
 
-func _on_ahead_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+func _on_ahead_area_shape_exited(_area_rid, _area, _area_shape_index, _local_shape_index):
 	forward = true
 
-
-func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	pass
-
-func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	#var parent = area.get_parent()
-	#
-	#if parent.name == "direction_change" :
-		##print((global_position/32).round(),",",(parent.global_position/32).round())
-		#print("my position = ", global_position/32, " thier position = ", parent.global_position/32)
-		##direction = parent.get_direction();
-	pass
 
 var inHead = false
 func _on_area_2d_mouse_entered() -> void:
 	inHead = true
 	
-
-
 func _on_area_2d_mouse_exited() -> void:
 	inHead = false
 	

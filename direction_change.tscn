@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dep16lhaao1us"]
 
-[ext_resource type="Script" uid="uid://clveb35ufi0fh" path="res://direction_change.gd" id="1_rodjc"]
+[ext_resource type="Script" path="res://direction_change.gd" id="1_rodjc"]
 [ext_resource type="Texture2D" uid="uid://e2i5lbnads81" path="res://assets/direction_change.png" id="1_ukllc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6cly"]
 size = Vector2(32, 32)
 
-[node name="direction_change" type="Node2D"]
+[node name="direction_change" type="Node2D" groups=["direction", "tile"]]
+z_index = -55
 script = ExtResource("1_rodjc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

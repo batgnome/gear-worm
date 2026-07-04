@@ -24,6 +24,7 @@ func _on_out_box_area_shape_entered(_area_rid, area, _area_shape_index, _local_s
 	if tail.is_in_group("tail") and tail.has_object():
 		tail.parent.add_factory_object(output_type,tail.get_sIndex())
 		$pusher.play()
+		output_num -=1
 
 
 func _on_pusher_animation_finished():

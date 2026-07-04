@@ -21,13 +21,15 @@ func get_grid_pos():
 
 func _on_out_box_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	var tail = area.get_parent()
-	if tail.is_in_group("tail") and tail.has_object():
+	if tail.is_in_group("tail") and tail.has_object() and output_num >0:
 		tail.parent.add_factory_object(output_type,tail.get_sIndex())
+		output_num -= 1
 		$pusher.play()
 
 
 func _on_pusher_animation_finished():
 	$pusher.set_frame_and_progress(0,0)
+	
 
 
 

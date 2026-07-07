@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	if focus:
+		
 		$Focus.position = focus.position
 		if !inv_set:
 			set_inv.emit(focus)
@@ -29,7 +30,3 @@ func get_grid_col(pos):
 
 func _on_snake_update():
 	update.emit()
-
-
-func _on_update():
-	pass # Replace with function body.

@@ -95,23 +95,24 @@ func isFull():
 	return true
 	
 func add_object(object):
-	update.emit()
+	
 	#print(object_storage)
 	for i in range(object_storage.size()):
 		if object_storage[i] ==null:
 			object_storage[i] = object.get_type()
 			tails[i].set_object(object.get_type())
+			update.emit()
 			return
 func add_factory_object(object,i):
-	update.emit()
 	if object_storage[i] ==null:
 		object_storage[i] = object
 		tails[i].set_object(object)		
+		update.emit()
 
 func remove_object(i):
-	update.emit()
 	object_storage[i] =null
 	tails[i].remove_object();
+	update.emit()
 	
 func _on_ahead_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if area.is_in_group("wall"):

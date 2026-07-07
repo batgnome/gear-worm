@@ -13,6 +13,7 @@ var first_move = true
 var current_tails = 0
 var max_tails = 4
 var pos_cell
+signal update
 @onready var main = get_parent().get_parent()
 func _ready():
 	pass
@@ -30,6 +31,7 @@ func add_tails(pos):
 	
 	object_storage.append(null)
 	current_tails += 1
+	update.emit()
 	
 	
 
@@ -93,6 +95,7 @@ func isFull():
 	return true
 	
 func add_object(object):
+	update.emit()
 	#print(object_storage)
 	for i in range(object_storage.size()):
 		if object_storage[i] ==null:
@@ -100,11 +103,13 @@ func add_object(object):
 			tails[i].set_object(object.get_type())
 			return
 func add_factory_object(object,i):
+	update.emit()
 	if object_storage[i] ==null:
 		object_storage[i] = object
 		tails[i].set_object(object)		
 
 func remove_object(i):
+	update.emit()
 	object_storage[i] =null
 	tails[i].remove_object();
 	
@@ -126,3 +131,5 @@ func _on_area_2d_mouse_exited() -> void:
 	
 func get_grid_pos():
 	return global_position/32
+func get_tails():
+	return tails

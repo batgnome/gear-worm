@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7jxoje1fy7ub"]
+[gd_scene format=3 uid="uid://c7jxoje1fy7ub"]
 
 [ext_resource type="Script" uid="uid://bdefv7yidaijo" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://umu71d3plxel" path="res://snake.tscn" id="1_v5jh3"]
@@ -10,26 +10,26 @@
 [ext_resource type="Resource" uid="uid://cu30lg7h8o1ku" path="res://Gear.tres" id="5_oap3e"]
 [ext_resource type="PackedScene" uid="uid://dep16lhaao1us" path="res://direction_change.tscn" id="6_u6b3p"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=2016874235]
 script = ExtResource("1_272bh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=117210331]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=996745081]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_5vw27")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1526448817]
 layout_mode = 0
 offset_top = 622.0
 offset_right = 1286.0
 offset_bottom = 720.0
 color = Color(0.698039, 0.698039, 0.698039, 0.545098)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=2014998757]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 2.475
@@ -39,8 +39,8 @@ offset_top = 642.0
 offset_right = 950.0
 offset_bottom = 597.24
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/Panel"]
-layout_mode = 2
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/Panel" unique_id=2104204791]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 9.0
@@ -54,82 +54,82 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 metadata/_edit_group_ = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Panel/NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Panel/NinePatchRect" unique_id=1174121600]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.915
 offset_right = -13.0
 offset_bottom = 0.0149994
-columns = 4
+columns = 3
 metadata/_edit_group_ = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel/NinePatchRect/GridContainer"]
-layout_mode = 2
-metadata/_edit_group_ = true
+[node name="Gameables" type="Node2D" parent="." unique_id=1275574044]
 
-[node name="Gameables" type="Node2D" parent="."]
-
-[node name="Snake" parent="Gameables" instance=ExtResource("1_v5jh3")]
+[node name="Snake" parent="Gameables" unique_id=1198498601 instance=ExtResource("1_v5jh3")]
 position = Vector2(448, 320)
 
-[node name="object" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object" parent="Gameables" unique_id=311592165 instance=ExtResource("2_812kd")]
 position = Vector2(576, 320)
 
-[node name="object2" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object2" parent="Gameables" unique_id=424535492 instance=ExtResource("2_812kd")]
 position = Vector2(629, 424)
 
-[node name="object3" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object3" parent="Gameables" unique_id=1554821677 instance=ExtResource("2_812kd")]
 position = Vector2(707, 345)
 
-[node name="object4" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object4" parent="Gameables" unique_id=242471523 instance=ExtResource("2_812kd")]
 position = Vector2(477, 435)
 
-[node name="object5" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object5" parent="Gameables" unique_id=938777505 instance=ExtResource("2_812kd")]
 position = Vector2(512, 320)
 
-[node name="object6" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object6" parent="Gameables" unique_id=1534735667 instance=ExtResource("2_812kd")]
 position = Vector2(738, 547)
 
-[node name="object7" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object7" parent="Gameables" unique_id=167069680 instance=ExtResource("2_812kd")]
 position = Vector2(490, 514)
 
-[node name="object8" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object8" parent="Gameables" unique_id=720310277 instance=ExtResource("2_812kd")]
 position = Vector2(145, 506)
 
-[node name="object9" parent="Gameables" instance=ExtResource("2_812kd")]
+[node name="object9" parent="Gameables" unique_id=19966433 instance=ExtResource("2_812kd")]
 position = Vector2(179, 213)
 
-[node name="Factory" parent="Gameables" instance=ExtResource("3_i3g8k")]
+[node name="Factory" parent="Gameables" unique_id=408750376 instance=ExtResource("3_i3g8k")]
 position = Vector2(256, 256)
 
-[node name="Factory2" parent="Gameables" instance=ExtResource("3_i3g8k")]
+[node name="Factory2" parent="Gameables" unique_id=789115787 instance=ExtResource("3_i3g8k")]
 position = Vector2(288, 352)
 input_type = ExtResource("4_gr86d")
 output_type = ExtResource("5_oap3e")
 
-[node name="direction_change3" parent="Gameables" instance=ExtResource("6_u6b3p")]
+[node name="direction_change3" parent="Gameables" unique_id=1364582704 instance=ExtResource("6_u6b3p")]
 position = Vector2(576, 512)
 
-[node name="direction_change" parent="Gameables" instance=ExtResource("6_u6b3p")]
+[node name="direction_change" parent="Gameables" unique_id=1748492054 instance=ExtResource("6_u6b3p")]
 position = Vector2(448, 416)
 
-[node name="direction_change4" parent="Gameables" instance=ExtResource("6_u6b3p")]
+[node name="direction_change4" parent="Gameables" unique_id=282348329 instance=ExtResource("6_u6b3p")]
 position = Vector2(704, 416)
 rotation = -3.14159
 Dir = Vector2(0, 1)
 
-[node name="direction_change5" parent="Gameables" instance=ExtResource("6_u6b3p")]
+[node name="direction_change5" parent="Gameables" unique_id=1126239211 instance=ExtResource("6_u6b3p")]
 position = Vector2(704, 512)
 rotation = -1.5708
 Dir = Vector2(-1, 0)
 
-[node name="direction_change2" parent="Gameables" instance=ExtResource("6_u6b3p")]
+[node name="direction_change2" parent="Gameables" unique_id=1246390144 instance=ExtResource("6_u6b3p")]
 position = Vector2(576, 416)
 rotation = 1.5708
 Dir = Vector2(1, 0)
 
-[node name="Focus" type="Camera2D" parent="."]
+[node name="Focus" type="Camera2D" parent="." unique_id=614832976]
 position = Vector2(640, 352)
 zoom = Vector2(2.19, 2.19)
 position_smoothing_enabled = true
+
+[connection signal="set_inv" from="." to="CanvasLayer/Control" method="_on_main_set_inv"]
+[connection signal="update" from="." to="CanvasLayer/Control" method="_on_main_update"]
+[connection signal="update" from="Gameables/Snake" to="." method="_on_snake_update"]

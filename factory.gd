@@ -25,7 +25,7 @@ func _on_out_box_area_shape_entered(_area_rid, area, _area_shape_index, _local_s
 		tail.parent.add_factory_object(output_type,tail.get_sIndex())
 		output_num -= 1
 		$pusher.play()
-		output_num -=1
+		
 
 
 func _on_pusher_animation_finished():

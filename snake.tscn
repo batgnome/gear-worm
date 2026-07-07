@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://umu71d3plxel"]
+[gd_scene format=3 uid="uid://umu71d3plxel"]
 
 [ext_resource type="Script" uid="uid://da4a81b51msfa" path="res://snake.gd" id="1_3xlq4"]
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_wrc4s"]
@@ -10,28 +10,28 @@ size = Vector2(34, 34)
 font_size = 7
 font_color = Color(0, 0, 0, 1)
 
-[node name="Snake" type="Node2D"]
+[node name="Snake" type="Node2D" unique_id=397081702]
 script = ExtResource("1_3xlq4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1689460910]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1568777051]
 shape = SubResource("RectangleShape2D_opfue")
 
-[node name="ahead" type="Area2D" parent="."]
+[node name="ahead" type="Area2D" parent="." unique_id=238247095]
 visible = false
 angular_damp_space_override = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ahead"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ahead" unique_id=1832260762]
 visible = false
 position = Vector2(0, -34)
 shape = SubResource("RectangleShape2D_opfue")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=646485447]
 position = Vector2(0, -4.76837e-07)
 texture = ExtResource("1_wrc4s")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1003570751]
 offset_left = -9.0
 offset_top = -7.0
 offset_right = 32.0

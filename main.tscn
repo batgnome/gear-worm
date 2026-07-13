@@ -2,67 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bdefv7yidaijo" path="res://main.gd" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://umu71d3plxel" path="res://snake.tscn" id="1_v5jh3"]
-[ext_resource type="Script" uid="uid://buvrwqrfd8hyt" path="res://control.gd" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://ddajqfljaerbw" path="res://inventory.tscn" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c6srav1oxggy2" path="res://object.tscn" id="2_812kd"]
 [ext_resource type="PackedScene" uid="uid://cfbuxldwha6y7" path="res://factory.tscn" id="3_i3g8k"]
-[ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="3_kek77"]
 [ext_resource type="Resource" uid="uid://btefm2dibwic2" path="res://Wheel.tres" id="4_gr86d"]
 [ext_resource type="Resource" uid="uid://cu30lg7h8o1ku" path="res://Gear.tres" id="5_oap3e"]
 [ext_resource type="PackedScene" uid="uid://dep16lhaao1us" path="res://direction_change.tscn" id="6_u6b3p"]
+[ext_resource type="PackedScene" uid="uid://dgn12bsnakrtq" path="res://Pickup_inv.tscn" id="9_kek77"]
 
 [node name="Main" type="Node2D" unique_id=2016874235]
 script = ExtResource("1_272bh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=117210331]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=996745081]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_5vw27")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1526448817]
-layout_mode = 0
-offset_top = 622.0
-offset_right = 1286.0
-offset_bottom = 720.0
-color = Color(0.698039, 0.698039, 0.698039, 0.545098)
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=2014998757]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 2.475
-anchor_bottom = 3.094
-offset_left = 275.0
-offset_top = 642.0
-offset_right = 950.0
-offset_bottom = 597.24
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/Panel" unique_id=2104204791]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 10.0
-offset_right = -13.0
-offset_bottom = -10.0
-texture = ExtResource("3_kek77")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-metadata/_edit_group_ = true
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Panel/NinePatchRect" unique_id=1174121600]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.915
-offset_right = -13.0
-offset_bottom = 0.0149994
-columns = 3
-metadata/_edit_group_ = true
+[node name="CanvasLayer" parent="." unique_id=397704831 instance=ExtResource("2_5vw27")]
 
 [node name="Gameables" type="Node2D" parent="." unique_id=1275574044]
 
@@ -130,6 +81,6 @@ position = Vector2(640, 352)
 zoom = Vector2(2.19, 2.19)
 position_smoothing_enabled = true
 
-[connection signal="set_inv" from="." to="CanvasLayer/Control" method="_on_main_set_inv"]
-[connection signal="update" from="." to="CanvasLayer/Control" method="_on_main_update"]
+[node name="pickup_inv" parent="." unique_id=1148036971 instance=ExtResource("9_kek77")]
+
 [connection signal="update" from="Gameables/Snake" to="." method="_on_snake_update"]

@@ -9,6 +9,7 @@ func set_item(item):
 	if item:
 		$item.texture = item.stored_texture
 		$item.visible = true
+		itemType = item
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

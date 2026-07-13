@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://g70homdpp5e2"]
+
+[ext_resource type="Script" uid="uid://w4xudy5yrv4y" path="res://placer.gd" id="1_di4i5"]
+[ext_resource type="Texture2D" uid="uid://dj7vbnje2f0ko" path="res://assets/direction_change_stored.png" id="2_nqqtd"]
+
+[node name="placer" type="Node2D" unique_id=1163847235]
+script = ExtResource("1_di4i5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680530190]
+texture = ExtResource("2_nqqtd")

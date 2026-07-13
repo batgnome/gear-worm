@@ -1,55 +1,55 @@
 [gd_scene format=3 uid="uid://ddajqfljaerbw"]
 
+[ext_resource type="Script" uid="uid://buvrwqrfd8hyt" path="res://control.gd" id="1_5tt2m"]
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_psafj"]
-[ext_resource type="PackedScene" uid="uid://by74r6e3ij7ek" path="res://inv_panel.tscn" id="2_5tt2m"]
 
-[node name="Control" type="Control" unique_id=1192605995]
+[node name="Inventory" type="CanvasLayer" unique_id=397704831]
+
+[node name="Control" type="Control" parent="." unique_id=2091178431]
 layout_mode = 3
 anchors_preset = 0
-size_flags_stretch_ratio = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5tt2m")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1298265342]
-texture_filter = 1
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1143453691]
 layout_mode = 0
-offset_right = 447.0
-offset_bottom = 282.0
+offset_top = 622.0
+offset_right = 1286.0
+offset_bottom = 720.0
+color = Color(0.698039, 0.698039, 0.698039, 0.545098)
+
+[node name="Panel" type="Panel" parent="Control" unique_id=266192433]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.475
+anchor_bottom = 3.094
+offset_left = 275.0
+offset_top = 642.0
+offset_right = 950.0
+offset_bottom = 597.24
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel" unique_id=1754195695]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = -13.0
+offset_bottom = -10.0
 texture = ExtResource("1_psafj")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+metadata/_edit_group_ = true
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=1113851986]
+[node name="GridContainer" type="GridContainer" parent="Control/Panel/NinePatchRect" unique_id=1287371814]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.014
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 0.051999807
-offset_right = -7.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 11
-
-[node name="inv_panel" parent="NinePatchRect/GridContainer" unique_id=481266564 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel2" parent="NinePatchRect/GridContainer" unique_id=1800620181 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel3" parent="NinePatchRect/GridContainer" unique_id=267595102 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel4" parent="NinePatchRect/GridContainer" unique_id=1881348428 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel5" parent="NinePatchRect/GridContainer" unique_id=676089841 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel6" parent="NinePatchRect/GridContainer" unique_id=166373489 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
-
-[node name="inv_panel7" parent="NinePatchRect/GridContainer" unique_id=943204427 instance=ExtResource("2_5tt2m")]
-layout_mode = 2
+anchor_bottom = 0.915
+offset_right = -13.0
+offset_bottom = 0.0149994
+columns = 3
+metadata/_edit_group_ = true

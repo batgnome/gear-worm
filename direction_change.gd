@@ -13,9 +13,14 @@ func _process(_delta):
 		$Area2D.visible =true
 	#else:
 		#position = get_global_mouse_position()
-	if Input.is_action_just_pressed("MOUSE_LEFT"):
-		active = false
-
+	#if Input.is_action_just_pressed("MOUSE_LEFT"):
+		#active = false
+func init(item,rot,pos):
+	Dir = Vector2.from_angle(deg_to_rad(rot))
+	print(Dir)
+	global_position = pos
+	pos_cell = global_position/32
+	$Sprite2D.rotation_degrees = rot
 func get_direction():
 	return Dir
 

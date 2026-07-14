@@ -5,10 +5,14 @@ var inv_set = false
 signal set_inv(focus)
 signal update
 func _ready() -> void:
-	focus = $Gameables/Snake
+	#focus = $Gameables/Snake
 	for i in $Gameables.get_children():
 		children_positions[i.get_grid_pos()] = i
-	
+
+func add_kid(kid,pos):
+	add_child(kid)
+	children_positions[pos/32] = kid
+	#print(children_positions)
 func _process(_delta: float) -> void:
 	if focus:
 		

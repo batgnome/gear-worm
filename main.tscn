@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cu30lg7h8o1ku" path="res://Gear.tres" id="5_oap3e"]
 [ext_resource type="PackedScene" uid="uid://dep16lhaao1us" path="res://direction_change.tscn" id="6_u6b3p"]
 [ext_resource type="PackedScene" uid="uid://dgn12bsnakrtq" path="res://Pickup_inv.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://g70homdpp5e2" path="res://placer.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node2D" unique_id=2016874235]
 script = ExtResource("1_272bh")
@@ -82,5 +83,7 @@ zoom = Vector2(2.19, 2.19)
 position_smoothing_enabled = true
 
 [node name="pickup_inv" parent="." unique_id=1148036971 instance=ExtResource("9_kek77")]
+
+[node name="placer" parent="." unique_id=1163847235 instance=ExtResource("10_4c57u")]
 
 [connection signal="update" from="Gameables/Snake" to="." method="_on_snake_update"]

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_7felf"]
 [ext_resource type="Script" uid="uid://bca78nr5mbq0i" path="res://pickup_inv.gd" id="1_hle5g"]
 [ext_resource type="PackedScene" uid="uid://by74r6e3ij7ek" path="res://inv_panel.tscn" id="2_v3j05"]
+[ext_resource type="Resource" uid="uid://flcpd6ey72mf" path="res://Arrow.tres" id="4_in1ye"]
 
 [node name="pickup_inv" type="CanvasLayer" unique_id=1148036971]
 
@@ -12,6 +13,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1286.0
 offset_bottom = 717.0
+mouse_filter = 2
 script = ExtResource("1_hle5g")
 
 [node name="Panel" type="Panel" parent="Control" unique_id=59156813]
@@ -23,6 +25,7 @@ offset_left = 176.0
 offset_top = 163.0
 offset_right = -2062.8499
 offset_bottom = -1680.3982
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Panel" unique_id=1255458677]
 layout_mode = 1
@@ -53,11 +56,13 @@ offset_top = 10.004816
 offset_right = -6.0
 offset_bottom = 30.703339
 scale = Vector2(3.52, 1.66)
+mouse_filter = 2
 columns = 8
 metadata/_edit_group_ = true
 
 [node name="inv_panel" parent="Control/Panel/NinePatchRect/GridContainer" unique_id=481266564 instance=ExtResource("2_v3j05")]
 layout_mode = 2
+itemType = ExtResource("4_in1ye")
 
 [node name="inv_panel2" parent="Control/Panel/NinePatchRect/GridContainer" unique_id=1181717796 instance=ExtResource("2_v3j05")]
 layout_mode = 2

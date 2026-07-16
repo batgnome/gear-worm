@@ -6,7 +6,7 @@ var direction = Vector2.UP
 var history = []    
 var object_storage = []
 const GRID = 32                  # cell size — was your segment_gap
-var step_time = 0.4      # seconds per cell (lower = faster)
+var step_time = 0.6      # seconds per cell (lower = faster)
 var step_accum = 0.0
 var forward = true
 var first_move = true
@@ -114,9 +114,9 @@ func remove_object(i):
 	tails[i].remove_object();
 	update.emit()
 	
-func _on_ahead_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
-	if area.is_in_group("wall"):
-		forward = false
+#func _on_ahead_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
+	#if area.is_in_group("wall"):
+		#forward = false
 
 
 func _on_ahead_area_shape_exited(_area_rid, _area, _area_shape_index, _local_shape_index):

@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://by74r6e3ij7ek"]
 
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_0avih"]
+[ext_resource type="Shader" uid="uid://bkmajuivslhi2" path="res://inv_panel.gdshader" id="1_1y1kr"]
 [ext_resource type="Script" uid="uid://c65dcqx2rf8h7" path="res://inv_panel.gd" id="1_s8vwf"]
 [ext_resource type="Texture2D" uid="uid://be38ioewl1l4r" path="res://assets/gear_1_stored.png" id="2_h5cw7"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dtk6"]
+shader = ExtResource("1_1y1kr")
+shader_parameter/mouse_position = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ped1"]
+size = Vector2(31, 32)
+
 [node name="inv_panel" type="Panel" unique_id=481266564]
+material = SubResource("ShaderMaterial_5dtk6")
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = -1
 offset_right = 32.0
@@ -20,3 +29,12 @@ visible = false
 position = Vector2(16, 16)
 scale = Vector2(0.65625, 0.6875)
 texture = ExtResource("2_h5cw7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1672379741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=585670967]
+position = Vector2(16.5, 16)
+shape = SubResource("RectangleShape2D_4ped1")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

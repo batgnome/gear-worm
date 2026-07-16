@@ -5,7 +5,7 @@ extends Node2D
 #player can rotate object ✅
 #deselect by destroying itself
 #places objects in a grid ✅
-var rot = -90
+var rot = 0
 var item : ItemType
 const GRID_SIZE = 32
 var temp = preload("res://direction_change.tscn")

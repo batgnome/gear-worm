@@ -75,12 +75,12 @@ Dir = Vector2(-1, 0)
 [node name="direction_change2" parent="Gameables" unique_id=1246390144 instance=ExtResource("6_u6b3p")]
 position = Vector2(576, 416)
 rotation = 1.5708
-Dir = Vector2(1, 0)
 
 [node name="Focus" type="Camera2D" parent="." unique_id=614832976]
 position = Vector2(640, 352)
-zoom = Vector2(2.19, 2.19)
+zoom = Vector2(1.65, 1.65)
 position_smoothing_enabled = true
+position_smoothing_speed = 1.77
 
 [node name="pickup_inv" parent="." unique_id=1148036971 instance=ExtResource("9_kek77")]
 

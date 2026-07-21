@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b06drggh1q6o4" path="res://assets/snake.png" id="1_7felf"]
 [ext_resource type="Script" uid="uid://bca78nr5mbq0i" path="res://pickup_inv.gd" id="1_hle5g"]
 [ext_resource type="PackedScene" uid="uid://by74r6e3ij7ek" path="res://inv_panel.tscn" id="2_v3j05"]
-[ext_resource type="Resource" uid="uid://flcpd6ey72mf" path="res://Arrow.tres" id="4_in1ye"]
+[ext_resource type="Resource" uid="uid://flcpd6ey72mf" path="res://resources/Arrow.tres" id="4_in1ye"]
+[ext_resource type="Resource" uid="uid://dpugatt5v6lt" path="res://resources/factory.tres" id="5_5rjxs"]
 
 [node name="pickup_inv" type="CanvasLayer" unique_id=1148036971]
 
@@ -66,6 +67,7 @@ itemType = ExtResource("4_in1ye")
 
 [node name="inv_panel2" parent="Control/Panel/NinePatchRect/GridContainer" unique_id=1181717796 instance=ExtResource("2_v3j05")]
 layout_mode = 2
+itemType = ExtResource("5_5rjxs")
 
 [node name="inv_panel3" parent="Control/Panel/NinePatchRect/GridContainer" unique_id=1217946778 instance=ExtResource("2_v3j05")]
 layout_mode = 2

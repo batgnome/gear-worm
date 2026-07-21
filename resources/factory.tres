@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://dpugatt5v6lt"]
+
+[ext_resource type="Script" uid="uid://bk0tuy1n83miq" path="res://ItemType.gd" id="1_1ivwu"]
+[ext_resource type="Texture2D" uid="uid://fl1784robg8b" path="res://assets/factory_new.png" id="2_uauhc"]
+[ext_resource type="Texture2D" uid="uid://cpw75odrelrju" path="res://assets/factory_new_stored.png" id="3_6cf4o"]
+
+[resource]
+script = ExtResource("1_1ivwu")
+id = "factory"
+stored_texture = ExtResource("2_uauhc")
+world_texture = ExtResource("3_6cf4o")
+node_object = "res://factory.tscn"
+metadata/_custom_type_script = "uid://bk0tuy1n83miq"

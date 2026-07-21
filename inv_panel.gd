@@ -3,7 +3,7 @@ extends Panel
 @export var itemType: ItemType
 
 var is_mouse_inside := false
-
+@onready var parent = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 func _ready() -> void:
 	set_item(itemType)
 
@@ -12,9 +12,14 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 
 func _process(_delta: float) -> void:
+	
+		
 	if is_mouse_inside and material:
 		var local_mouse := get_local_mouse_position()
 		var normalized := local_mouse / size
+		if parent.placer and Input.is_action_pressed("MOUSE_LEFT") and itemType:
+			parent.placer.set_item(itemType)
+			
 		material.set_shader_parameter("mouse_position", normalized)
 
 func set_item(item: ItemType) -> void:

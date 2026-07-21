@@ -1,13 +1,24 @@
 extends Node2D
 
-@export var input_type : ItemType = load("res://Gear.tres")
-@export var output_type : ItemType = load("res://Wheel.tres")
+@export var input_type : ItemType = load("res://resources/Gear.tres")
+@export var output_type : ItemType = load("res://resources/Arrow.tres")
+#@export var output_type : ItemType = load("res://resources/Wheel.tres")
+
 var output_num = 0
 var output_object = preload("res://object.tscn")
-
+var Dir : Vector2
+var pos_cell : Vector2
 func _ready():
 	$input.texture = input_type.stored_texture
 	$output.texture = output_type.stored_texture
+#dir_tile.init(item, rot, global_position)
+func init(item,rot,pos):
+	print(rot)
+	Dir = Vector2.from_angle(deg_to_rad(rot-90))
+	#print(Dir)
+	global_position = pos
+	pos_cell = global_position/32
+	rotation_degrees = rot
 func get_type():
 	return input_type
 	

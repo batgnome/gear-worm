@@ -1,14 +1,16 @@
 extends Control
 
 @onready var parent = get_parent().get_parent()
+@onready var placer = parent.placer
+@onready var grid = $Panel/NinePatchRect/GridContainer
 var worm
 var column = preload("res://inv_panel.tscn")
 var columns = []
-@onready var grid = $Panel/NinePatchRect/GridContainer
+
 func _ready():
 	parent.set_inv.connect(_on_main_set_inv)
 	parent.update.connect(_on_main_update)
-
+	print("placer ", placer)
 func _set_inv(focus):
 	if focus:
 		worm = focus

@@ -19,9 +19,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("MOUSE_RIGHT"):
 		rot = (rot +90)%360
 		$Sprite2D.rotation_degrees = rot
-	if event.is_action_pressed("MOUSE_LEFT"):
+	if event.is_action_pressed("MOUSE_LEFT") and temp:
 		var dir_tile = temp.instantiate()
 		dir_tile.init(item, rot, global_position)
 		get_parent().add_kid(dir_tile,global_position)
 func init(item):
 	$Sprite2D.texture = item.texture
+
+func set_item(item):
+	$Sprite2D.texture = item.world_texture
+	temp = load(item.node_object)

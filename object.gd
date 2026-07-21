@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var item: ItemType = load("res://Gear.tres")
+@export var item: ItemType = load("res://resources/Gear.tres")
 
 func _ready():
 	init(item)
